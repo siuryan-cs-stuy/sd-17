@@ -4,8 +4,8 @@ var boxWidth = box.offsetWidth;
 
 //hardcode target as center
 //randomize later
-var targetX = boxWidth / 2;
-var targetY = boxHeight / 2;
+var targetX = Math.random() * boxWidth;
+var targetY = Math.random() * boxHeight;
 
 
 console.log( "box height: " + boxHeight );
@@ -23,6 +23,10 @@ var findIt = function(e) {
   console.log(d);
   var color = 255 - d;
   box.style.background = "rgb(" + color + "," + color + "," + 255 + ")";
+
+  if (d < 15) {
+    box.style.background = "#000000";
+  }
 };
 
 box.addEventListener("mousemove", findIt);
